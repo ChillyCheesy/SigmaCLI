@@ -1,0 +1,71 @@
+#!/usr/bin/env ruby
+
+require "thor"
+require "./title-printer"
+
+PROMPT = "sgm"
+
+class Sigma < Thor
+
+    desc "new MODULE", "create a new module with the default module configuration"
+    long_desc <<-LONGDESC
+        `#{PROMPT} new <name>` will create a new module with the default module project inititialized.
+
+            It takes one parameter, the name of the module.
+            \x5If the name is not provided, the module will be name 'NewModule'
+    LONGDESC
+    def new(name="NewModule")
+        puts "Creating new module #{name}"
+    end
+
+    desc "install MODULE", "install a module"
+    long_desc <<-LONGDESC
+        `#{PROMPT} install <name>` will install a module.
+
+            It takes one parameter, the name of the module.
+            \x5The name of the module must be provided to the command
+    LONGDESC
+    def install(name)
+        puts "Installing module #{name}"
+    end
+
+
+
+    desc "publish MODULE_JAR", "publish a module"
+    long_desc <<-LONGDESC
+        `#{PROMPT} publish <module.jar>` will publish a module.
+
+            It takes one parameter, the path to the module jar file.
+            \x5The path to the module jar file must be provided to the command
+    LONGDESC
+    def publish(jar)
+        puts "Publishing module"
+    end
+
+
+    option :version, :aliases => "-v", :desc => "the version of the module", :default => "latest"
+    desc "install_modulo", "install a Modulo server on the current repertory"
+    long_desc <<-LONGDESC
+        `#{PROMPT} install_modulo` will install a Modulo server on the current repertory.
+
+            It takes no parameter.
+    LONGDESC
+    def install_modulo
+        puts "Installing Modulo"
+    end
+
+
+    desc "modulo_version", "print all the versions available for Modulo"
+    def modulo_version
+        puts "Modulo version"
+    end
+end
+
+
+if ARGV.empty?
+    title = Title.new
+    title.print_title
+end
+
+
+Sigma.start(ARGV)
