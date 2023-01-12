@@ -12,10 +12,12 @@
 Make sure you have Ruby 3.0.0 installed.  
 If you don't have Ruby installed, you can install it from [![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)](https://www.ruby-lang.org/en/downloads/)
 
-Install the dependencies using bundler
+Install the dependencies using bundler`
 
-> gem install bundler  
-> bundle
+```
+gem install bundler  
+bundle
+```
 
 # Usage
 
@@ -24,11 +26,15 @@ Install the dependencies using bundler
 You can install modulo's server by passing the flag '-m' or '--modulo' to the install command.  
 This will ask you to select the version you want to download and install it.
 
-> sgm install -m
+```
+sgm install -m
+```
 
 You can also specify the version you want to install by passing the version as an argument.
 
-> sgm install -m BINKS-0.3.0
+```
+sgm install -m BINKS-0.3.0
+```
 
 ## Install a Modulo Module
 
@@ -39,19 +45,25 @@ This feature is currently in work in progress.
 You can generate a new Modulo module with the command new  
 You also can give the command the name you want your module to be called (By default the generated module will be called 'NewModule')
 
-> sgm new TardisModule
+```
+sgm new TardisModule
+```
 
 ## Check the version of Sigma
 
 You can check the version of Sigma by simply using the command version
 
-> sgm version
+```
+sgm version
+```
 
 ## Check Modulo version
 
 You can check the version of Modulo by using the command version and passing it the flag '-m'
 
-> sgm version -m
+```
+sgm version -m
+```
 
 # Contributing
 
