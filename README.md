@@ -3,7 +3,7 @@
 <p align="center">
   <img src="logo.png" alt="sigma-logo" width="120px" height="120px"/>
   <br>
-  <i>Sigma is a command line interface to install Modulo's server and create module faster
+  <i>Sigma is a command line interface to install Modulo's server and create module faster</i>
   <br>
 </p>
 
