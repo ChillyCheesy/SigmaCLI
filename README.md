@@ -1,7 +1,7 @@
 <h1 align="center">Sigma - The Modulo CLI</h1>
 
 <p align="center">
-  <img src="logo.png" alt="angular-logo" width="120px" height="120px"/>
+  <img src="logo.png" alt="sigma-logo" width="120px" height="120px"/>
   <br>
   <i>Sigma is a command line interface to install Modulo's server and create module faster
   <br>
