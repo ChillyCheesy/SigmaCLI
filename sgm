@@ -29,8 +29,7 @@ class Sigma < Thor
         new_module(name[0].upcase + name[1..-1])
     end
 
-    option :modulo, aliases: "-m", banner:"", desc: "Use this flag to install modulo's server"
-    option :version, aliases: "-v", desc: "The version of the modulo server to install (only works if you use the -modulo or -m flag)"
+    option :modulo, aliases: "-m", banner:"version", desc: "Use this flag to install modulo's server"
     desc "install <module>", "install a module or a Modulo server"
     long_desc <<-LONGDESC
         > #{PROMPT} install <name>                      - will install a module.
@@ -42,11 +41,11 @@ class Sigma < Thor
 
             It takes no parameter and it will let you choose the version of the Modulo server to install.
             
-        > #{PROMPT} install -modulo -version <version>  - will install a Modulo server on the current repertory with the selected version.
+        > #{PROMPT} install -modulo <version>  - will install a Modulo server on the current repertory with the selected version.
     LONGDESC
     def install()
         if options[:modulo]
-            download_modulo(options[:version])
+            download_modulo(options[:modulo])
         else
             puts "Installing module #{name}"
         end
