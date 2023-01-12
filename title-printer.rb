@@ -9,7 +9,8 @@ LINES = [
     "    / /__ | || (_| || | | | | || (_| |    ",
     "   /_____)|_| \\__, ||_| |_| |_| \\__,_|    ",
     "              |___/                       ",
-    "                                  A Modulo CLI"
+    " Allons-y !          -          A Modulo CLI",
+    ""
 ]
 
 def print_title
