@@ -2,7 +2,7 @@
 require 'bundler/setup'
 
 PACKAGE_NAME = "sigma"
-VERSION = "1.0.0"
+VERSION = "SUNDAY-1.0.0"
 TRAVELING_RUBY_VERSION = "20150210-2.1.5"
 
 desc "Package your app"

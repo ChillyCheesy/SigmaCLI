@@ -1,0 +1,34 @@
+name: Package And Release
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        with:
+          ruby-version: '2.1'
+      - name: Install dependencies
+        run: bundle install
+      - name: Generate package
+        run: bundle exec rake package
+      - name: Setup release title
+        run: echo "TITLE=$(cat Rakefile | grep  'VERSION = ' | head -1 | sed -e 's/VERSION = //g' | tr -d \")" >> $GITHUB_ENV
+      - name: Upload release
+        if: github.ref == 'refs/heads/master'
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: ${{ env.TITLE }}
+          title: 📦 ${{ env.TITLE }}
+          prerelease: false
+          files: |
+            sigma-*-win32.zip
+            sigma-*-linux-x86.tar.gz
+            sigma-*-linux-x86_64.tar.gz
