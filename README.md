@@ -9,14 +9,13 @@
 
 # Installation
 
-Make sure you have Ruby 3.0.0 installed.  
-If you don't have Ruby installed, you can install it from [![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)](https://www.ruby-lang.org/en/downloads/)
 
-Install the dependencies using bundler`
+Go to the [releases](https://github.com/ChillyCheesy/SigmaCLI/releases/latest) page and download the latest version of Sigma for your OS.  
+Extract the package and add the sigma folder to your PATH.  
+Check if sigma is installed by running the command
 
 ```
-gem install bundler  
-bundle
+sgm version
 ```
 
 # Usage
